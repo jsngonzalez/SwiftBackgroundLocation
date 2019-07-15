@@ -44,10 +44,10 @@ class ViewController: UIViewController {
     
     @IBAction func clear(_ sender: Any) {
         if let polyline = currentPolyline {
-            mapView.remove(polyline)
+            mapView.removeOverlay(polyline)
         }
         if let polyline = currentBackgroundPolyline {
-            mapView.remove(polyline)
+            mapView.removeOverlay(polyline)
         }
     }
     
@@ -91,11 +91,11 @@ class ViewController: UIViewController {
         backgroundLocations.append(location)
         
         if let polyline = currentBackgroundPolyline {
-            mapView.remove(polyline)
+            mapView.removeOverlay(polyline)
         }
         
         currentBackgroundPolyline = ViewController.polyline(locations: backgroundLocations, title: "regions")
-        mapView.add(currentBackgroundPolyline!)
+        mapView.addOverlay(currentBackgroundPolyline!)
         
         logger.writeLocationToFile(location: location)
         
@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         locations.append(location)
         
         if let polyline = currentPolyline {
-            mapView.remove(polyline)
+            mapView.removeOverlay(polyline)
         }
 
         drawLocation(locations: locations)
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     
     func drawLocation(locations: [CLLocation]) {
         currentPolyline = ViewController.polyline(locations: locations, title: "location")
-        mapView.add(currentPolyline!)
+        mapView.addOverlay(currentPolyline!)
     }
     
     
@@ -138,13 +138,13 @@ class ViewController: UIViewController {
             if case let .Success(locations) = result {
                 
                 self.circles.forEach({ circle in
-                    self.mapView.remove(circle)
+                    self.mapView.removeOverlay(circle)
                 })
                 
                 locations.forEach({ location in
                     let circle = MKCircle(center: location.coordinate, radius: self.appDelagete().backgroundLocationManager.regionConfig.regionRadius)
                     circle.title = "regionPlanned"
-                    self.mapView.add(circle)
+                    self.mapView.addOverlay(circle)
                     self.circles.append(circle)
                 })
                 

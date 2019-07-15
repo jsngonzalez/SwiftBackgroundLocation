@@ -6,7 +6,7 @@ extension UIAlertController {
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:"" ), style: .cancel, handler: nil)
         let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment:"" ), style: .default, handler: { action in
-            UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
         })
         controller.addAction(cancelAction)
         controller.addAction(settingsAction)

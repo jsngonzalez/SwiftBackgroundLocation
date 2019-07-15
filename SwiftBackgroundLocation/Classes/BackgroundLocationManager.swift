@@ -161,9 +161,9 @@ extension BackgroundLocationManager {
     fileprivate func provideLocation(location: CLLocation) {
         listener?(Result.Success(location))
         
-        if let currentBGTask = currentBGTask, currentBGTask != UIBackgroundTaskInvalid  {
+        if let currentBGTask = currentBGTask, currentBGTask != UIBackgroundTaskIdentifier.invalid  {
             UIApplication.shared.endBackgroundTask(currentBGTask)
-            self.currentBGTask = UIBackgroundTaskInvalid
+            self.currentBGTask = UIBackgroundTaskIdentifier.invalid
         }
     }
 }
