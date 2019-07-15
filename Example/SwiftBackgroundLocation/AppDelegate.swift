@@ -8,9 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager = TrackingHeadingLocationManager()
     var backgroundLocationManager = BackgroundLocationManager(regionConfig: RegionConfig(regionRadius: 100.0))
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        if launchOptions?[UIApplicationLaunchOptionsKey.location] != nil {
+        if launchOptions?[UIApplication.LaunchOptionsKey.location] != nil {
             BackgroundDebug().write(string: "UIApplicationLaunchOptionsLocationKey")
             
             backgroundLocationManager.startBackground() { result in

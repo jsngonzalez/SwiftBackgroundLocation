@@ -43,7 +43,7 @@ struct LocationLogger {
             var locations:[CLLocation] = []
             
             locationStrings.forEach({ locString in
-                let coordinateString = locString._split(separator: "&")
+                let coordinateString = locString.split(separator: "&")
                 if coordinateString.count > 2 {
                     let lat = Double(coordinateString[1])
                     let long = Double(coordinateString[2])

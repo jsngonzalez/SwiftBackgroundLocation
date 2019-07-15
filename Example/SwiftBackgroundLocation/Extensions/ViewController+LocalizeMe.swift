@@ -5,8 +5,8 @@ extension ViewController: UIGestureRecognizerDelegate {
         return true
     }
     
-    func didDragMap(gestureRecognizer: UIGestureRecognizer) {
-        if (gestureRecognizer.state == UIGestureRecognizerState.began) {
+    @objc func didDragMap(gestureRecognizer: UIGestureRecognizer) {
+        if (gestureRecognizer.state == UIGestureRecognizer.State.began) {
             localizeMeButton.localizeMeState = .unlocalized
         }
     }

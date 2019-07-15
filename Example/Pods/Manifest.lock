@@ -1,11 +1,7 @@
 PODS:
-  - Nimble (5.1.1)
-  - Quick (1.0.0)
-  - SwiftBackgroundLocation (0.1.1)
+  - SwiftBackgroundLocation (0.1.4)
 
 DEPENDENCIES:
-  - Nimble (~> 5.1.1)
-  - Quick (~> 1.0.0)
   - SwiftBackgroundLocation (from `../`)
 
 EXTERNAL SOURCES:
@@ -13,10 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
-  SwiftBackgroundLocation: 2ab1b335c3eaffc70cfc7505bfaf84e5ed106e5d
+  SwiftBackgroundLocation: 71d294f89d942224a7c7b9a5ff243fc856f58b53
 
-PODFILE CHECKSUM: 8eff8db1401e1f58c77c892442a33f02662ede4d
+PODFILE CHECKSUM: f481c1e25f05ccc4482c430dfda01f034aa26ab3
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
